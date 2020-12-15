@@ -3,33 +3,24 @@ import numpy as np
 import pandas as pd
 
 def page():
+	st.header("Implementation")
+	st.subheader("Describe any hardware you used or built. Illustrate with pictures and diagrams.")
 	st.write("""
-	### Temp Page
-	Here's our first attempt at using data to create a table:
+	Answer
 	""")
-
-	df = pd.DataFrame({
-	  'first column': [1, 2, 3, 4],
-	  'second column': [10, 20, 30, 40]
-	})
-	df
-
+	st.subheader("What parts did you use to build your solution?")
 	st.write("""
-	Random chart data
+	Answer
 	""")
-
-	chart_data = pd.DataFrame(
-	     np.random.randn(20, 3),
-	     columns=['a', 'b', 'c'])
-
-	st.line_chart(chart_data)
-
-	map_data = pd.DataFrame(
-	    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-	    columns=['lat', 'lon'])
-
+	st.subheader("Describe any software you wrote in detail. Illustrate with diagrams, flow charts, and/or other appropriate visuals. This includes launch files, URDFs, etc.")
 	st.write("""
-	Random map data
+	Answer
 	""")
-	st.map(map_data)
-	st.video("https://www.youtube.com/watch?v=S3GxDf1XGBA")
+	st.subheader("What design choices did you make when you formulated your design?")
+	st.write("""
+	Answer
+	""")
+	st.subheader("How does your complete system work? Describe each step.")
+	st.write("""
+	Answer
+	""")

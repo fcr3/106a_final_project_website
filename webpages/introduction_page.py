@@ -4,7 +4,7 @@ import pandas as pd
 
 def page():
 	st.header("Introduction")
-	st.subheader("The end goal:")
+	st.subheader("The end goal of our project:")
 	st.write("""
 	Answer
 	""")
@@ -12,7 +12,7 @@ def page():
 	st.write("""
 	Answer
 	""")
-	st.subheader("What interesting problems do you need to ssolve to make your solution work?")
+	st.subheader("What interesting problems do you need to solve to make your solution work?")
 	st.write("""
 	Answer
 	""")

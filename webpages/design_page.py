@@ -3,33 +3,28 @@ import numpy as np
 import pandas as pd
 
 def page():
+	st.header("Design")
+	st.subheader("What design criteria must your project meet?")
 	st.write("""
-	### Temp Page
-	Here's our first attempt at using data to create a table:
+	Answer
 	""")
-
-	df = pd.DataFrame({
-	  'first column': [1, 2, 3, 4],
-	  'second column': [10, 20, 30, 40]
-	})
-	df
-
+	st.subheader("What is the desired functionality?")
 	st.write("""
-	Random chart data
+	Answer
 	""")
-
-	chart_data = pd.DataFrame(
-	     np.random.randn(20, 3),
-	     columns=['a', 'b', 'c'])
-
-	st.line_chart(chart_data)
-
-	map_data = pd.DataFrame(
-	    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-	    columns=['lat', 'lon'])
-
+	st.subheader("Describe the design you chose.")
 	st.write("""
-	Random map data
+	Answer
 	""")
-	st.map(map_data)
-	st.video("https://www.youtube.com/watch?v=S3GxDf1XGBA")
+	st.subheader("What design choices did you make when you formulated your design?")
+	st.write("""
+	Answer
+	""")
+	st.subheader("What trade-offs did you have to make?")
+	st.write("""
+	Answer
+	""")
+	st.subheader("How do these design choices impact how well the project meets design criteria that would be encountered in a real engineering application, such as robustness, durability, and efficiency?")
+	st.write("""
+	Answer
+	""")
