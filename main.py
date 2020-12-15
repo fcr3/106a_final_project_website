@@ -20,7 +20,7 @@ st.title('ROAR: A 106A Final Project')
 def sidebar():
 	st.sidebar.title("Where do you want to go?")
 	app_mode = st.sidebar.selectbox("",
-	    ["Introduction", "Design", "Implementation", "Results", "Conclusion", "Team", "Additional Materials", "Home", "Project", "temp"])
+	    ["Home", "Introduction", "Design", "Implementation", "Results", "Conclusion", "Team", "Additional Materials", "Project", "temp"])
 	return app_mode
 
 
