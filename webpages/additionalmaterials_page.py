@@ -3,33 +3,24 @@ import numpy as np
 import pandas as pd
 
 def page():
+	st.header("Additional Materials")
+	st.subheader("Code, URDFs, and launch files you wrote:")
 	st.write("""
-	### Temp Page
-	Here's our first attempt at using data to create a table:
+	Answer
 	""")
-
-	df = pd.DataFrame({
-	  'first column': [1, 2, 3, 4],
-	  'second column': [10, 20, 30, 40]
-	})
-	df
-
+	st.subheader("CAD models for any hardware you designed:")
 	st.write("""
-	Random chart data
+	Answer
 	""")
-
-	chart_data = pd.DataFrame(
-	     np.random.randn(20, 3),
-	     columns=['a', 'b', 'c'])
-
-	st.line_chart(chart_data)
-
-	map_data = pd.DataFrame(
-	    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-	    columns=['lat', 'lon'])
-
+	st.subheader("Data sheets for components used in your system:")
 	st.write("""
-	Random map data
+	Answer
 	""")
-	st.map(map_data)
-	st.video("https://www.youtube.com/watch?v=S3GxDf1XGBA")
+	st.subheader("Any additional videos, images, or data from your finished solution:")
+	st.write("""
+	Answer
+	""")
+	st.subheader("Links to other public sites (e.g., GitHub), if that is where your files are stored:")
+	st.write("""
+	Answer
+	""")

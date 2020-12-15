@@ -3,33 +3,24 @@ import numpy as np
 import pandas as pd
 
 def page():
+	st.header("Conclusion")
+	st.subheader("Discuss your results.")
 	st.write("""
-	### Temp Page
-	Here's our first attempt at using data to create a table:
+	Answer
 	""")
-
-	df = pd.DataFrame({
-	  'first column': [1, 2, 3, 4],
-	  'second column': [10, 20, 30, 40]
-	})
-	df
-
+	st.subheader("How well did your finished solution meet your design criteria?")
 	st.write("""
-	Random chart data
+	Answer
 	""")
-
-	chart_data = pd.DataFrame(
-	     np.random.randn(20, 3),
-	     columns=['a', 'b', 'c'])
-
-	st.line_chart(chart_data)
-
-	map_data = pd.DataFrame(
-	    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-	    columns=['lat', 'lon'])
-
+	st.subheader("Did you encounter any particular difficulties?")
 	st.write("""
-	Random map data
+	Answer
 	""")
-	st.map(map_data)
-	st.video("https://www.youtube.com/watch?v=S3GxDf1XGBA")
+	st.subheader("Does your solution have any flaws or hacks?")
+	st.write("""
+	Answer
+	""")
+	st.subheader("What improvements would you make if you had additional time?")
+	st.write("""
+	Answer
+	""")

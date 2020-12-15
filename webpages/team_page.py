@@ -3,32 +3,12 @@ import numpy as np
 import pandas as pd
 
 def page():
+	st.header("Team")
+	st.subheader("Include names and short bios of each member of your project group.")
 	st.write("""
-	## Team Page
-	Here's our first attempt at using data to create a table:
+	Answer
 	""")
-
-	df = pd.DataFrame({
-	  'first column': [1, 2, 3, 4],
-	  'second column': [10, 20, 30, 40]
-	})
-	df
-
+	st.subheader("Describe the major contributions of each team member.")
 	st.write("""
-	Random chart data
+	Answer
 	""")
-
-	chart_data = pd.DataFrame(
-	     np.random.randn(20, 3),
-	     columns=['a', 'b', 'c'])
-
-	st.line_chart(chart_data)
-
-	map_data = pd.DataFrame(
-	    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-	    columns=['lat', 'lon'])
-
-	st.write("""
-	Random map data
-	""")
-	st.map(map_data)
