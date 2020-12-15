@@ -4,16 +4,19 @@ import pandas as pd
 
 def page():
 	st.header("Introduction")
-	st.subheader("Float like a Cadillac, sting like a Beemer - Lightning McQueen")
+	st.subheader("The end goal:")
 	st.write("""
-	
-	The end goal of our project:
+	Answer
 	""")
-
+	st.subheader("Why is this an interesting project?")
 	st.write("""
-	Why is this an interesting project? What interesting problems do you need to solve to make your solution work?
+	Answer
 	""")
-
+	st.subheader("What interesting problems do you need to ssolve to make your solution work?")
 	st.write("""
-	In what real-world robotics applications could the work from your project be useful?
+	Answer
+	""")
+	st.subheader("In what real-world robotics applications could the work from your project be useful?")
+	st.write("""
+	Answer
 	""")
