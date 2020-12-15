@@ -6,6 +6,7 @@ def page():
 	st.header("Introduction")
 	st.subheader("Float like a Cadillac, sting like a Beemer - Lightning McQueen")
 	st.write("""
+	
 	The end goal of our project:
 	""")
 
