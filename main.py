@@ -1,0 +1,28 @@
+import streamlit as st
+import numpy as np
+import pandas as pd
+
+from webpages.home_page import page as home
+from webpages.team_page import page as team
+from webpages.project_page import page as project
+
+st.title('ROAR: A 106A Final Project')
+
+def sidebar():
+	st.sidebar.title("Where do you want to go?")
+	app_mode = st.sidebar.selectbox("",
+	    ["Home", "Team", "Project"])
+	return app_mode
+
+
+def mainpage(page_mode):
+	if page_mode == 'Home':
+		home()
+	if page_mode == 'Team':
+		team()
+	if page_mode == 'Project':
+		project()
+
+if __name__ == '__main__':
+	page_mode = sidebar()
+	mainpage(page_mode)
