@@ -6,14 +6,13 @@ def page():
 	st.header("Introduction")
 	st.subheader("Float like a Cadillac, sting like a Beemer - Lightning McQueen")
 	st.write("""
-	### Introduction
-	Here's our first attempt at using data to create a table:
+	The end goal of our project:
 	""")
 
 	st.write("""
-	Random chart data
+	Why is this an interesting project? What interesting problems do you need to solve to make your solution work?
 	""")
 
 	st.write("""
-	Random map data
+	In what real-world robotics applications could the work from your project be useful?
 	""")
