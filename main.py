@@ -11,7 +11,6 @@ from webpages.design_page import page as design
 from webpages.implementation_page import page as implementation
 from webpages.results_page import page as results
 from webpages.conclusion_page import page as conclusion
-from webpages.team_page import page as team
 from webpages.additionalmaterials_page import page as additionalmaterials
 
 from webpages.temp_page import page as temppage
@@ -21,15 +20,13 @@ st.title('ROAR: A 106A Final Project')
 def sidebar():
 	st.sidebar.title("Where do you want to go?")
 	app_mode = st.sidebar.selectbox("",
-	    ["Home", "Team", "Project", "temp"])
+	    ["Introduction", "Design", "Implementation", "Results", "Conclusion", "Team", "Additional Materials", "Home", "Project", "temp"])
 	return app_mode
 
 
 def mainpage(page_mode):
 	if page_mode == 'Home':
 		home()
-	if page_mode == 'Team':
-		team()
 	if page_mode == 'Project':
 		project()
 	if page_mode == 'Introduction':
