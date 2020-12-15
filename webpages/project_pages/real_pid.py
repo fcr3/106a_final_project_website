@@ -32,3 +32,4 @@ def page():
 	Random map data
 	""")
 	st.map(map_data)
+	st.video("https://www.youtube.com/watch?v=S3GxDf1XGBA")
