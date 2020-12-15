@@ -5,7 +5,7 @@ from PIL import Image
 
 def page():
 	home_image = Image.open('homeimg.png')
-	st.image(home_image, caption= 'Float like a Cadillac, sting like a Beemer. - Lightning McQueen', use_column_width=True)
+	st.image(home_image, caption= '"Float like a Cadillac, sting like a Beemer." - Lightning McQueen', use_column_width=True)
 	st.write("""
 	## Home Page
 	Here's our first attempt at using data to create a table:
