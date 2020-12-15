@@ -14,9 +14,7 @@ def page():
 	As seen in the "Project Diagram" above, our project implements and tests various controllers, both physical and virtually, to lay the foundation for our team to build our own controller, optimized through reinforcement learning.
 	Our physical car was lent to us through Berkeley's ROAR research group and uses a Raspberry Pi for sensing, a waypoint parser and analyzer for planning, and signaling to wheels and steering for actuation. Our virtual car was simulated using Carla (an autonomous driving software) in various racing environments.
 	On our physical car, our project implemented a traditionally tuned PID controller with calibrated wheel encoders to understand the physical limitations of racing.
-	On our virtual car, our project implemented Stanford's award-winning Stanley controller to explore renowned controllers that improve speed and handling.
-
-	Using our physical and virtual car findings, we were able to create our own PID controller using reinforcement learning that we submitted to be used in the Berkeley ROAR race.
+	On our virtual car, our project implemented Stanford's award-winning Stanley controller to explore renowned controllers that improve speed and handling. Using our physical and virtual car findings, we were able to create our own PID controller using reinforcement learning that we submitted to be used in the Berkeley ROAR race.
 	""")
 	st.subheader("Why is this an interesting project?")
 	st.write("""
