@@ -1,10 +1,13 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from PIL import Image
 
 def page():
 	st.header("Introduction")
-	st.subheader("The end goal of our project:")
+	intro_image = Image.open('introimg.png')
+	st.image(intro_image, caption= 'Project Diagram', use_column_width=True)
+	st.subheader("Describe the end goal of your project.")
 	st.write("""
 	Answer
 	""")
