@@ -9,6 +9,45 @@ def page():
 	""")
 	st.video("https://www.youtube.com/watch?v=Tj12WJK7HaE")
 
+	st.header("Design Questions")
+	st.subheader(
+		"What design criteria must your project meet? What is the desired functionality?")
+	st.write("""
+	The design criteria is to smoothly, reliably, and quickly be able to autonomously
+    maneuver a vehicle around a given road course. For now, we are concerned with
+	simulated racing environments, so our ultimate goal is to achieve the fastest lap
+    around the given Carla track while taking into account the previosly mentioned items.
+    To this end, it was desired to test a variety of controllers and see which one
+    performs best.
+	""")
+
+	st.subheader("Describe the design you chose.")
+	st.write("""
+	A classic Stanley Controller was selected and coded.
+	""")
+
+	st.subheader(
+		"What design choices did you make when you formulated your design?\
+		What trade-offs did you have to make?")
+	st.write("""
+	We stuck with the specifications that were described in the Stanley controller paper.
+	We also consulted numerous resources on how to implement the Stanley controller,
+	which are introduced in the references section.
+	""")
+
+	st.subheader(
+		"How do these design choices impact how well the project meets design\
+		criteria that would be encountered in a real engineering application,\
+		such as robustness, durability, and efficiency?")
+	st.write("""
+	The Stanley controller is tried and true, being used in the first autonomous
+	vehicle to win the DARPA Grand Challenge in the contest’s second year (no
+	vehicles finished the off road course in the first year). It has been adapted
+	and tested in other situations and is a well known alternative to controllers
+	such as standard PID and Pure Pursuit controllers.
+	""")
+
+	st.header("Implementation Questions")
 	st.subheader("Describe any hardware you used or built. Illustrate with pictures and diagrams.")
 	st.write("""
 	Not applicable.
@@ -27,16 +66,6 @@ def page():
 	system modifications were minor - such as copying an agent and modifying it
 	to call the Stanley Controller instead of the already existing PID controller,
 	and changing the initiating file to call this agent instead of the original.
-	""")
-
-	st.subheader("What design choices did you make when you formulated your design?")
-	st.write("""
-	The Stanley controller is tried and true, being used in the first autonomous
-	vehicle to win the DARPA Grand Challenge in the contest’s second year
-	(no vehicles finished the off road course in the first year). It has been
-	adapted and tested in other situations and is a well known alternative to
-	controllers such as standard PID and Pure Pursuit controllers. We stuck
-	with the specifications that were described in the Stanley controller paper.
 	""")
 
 	st.subheader("How does your complete system work? Describe each step.")

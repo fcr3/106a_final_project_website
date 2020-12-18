@@ -67,6 +67,45 @@ def page():
 	expect better performance as well.
 	""")
 
+	st.header("Design Questions")
+	st.subheader(
+		"What design criteria must your project meet? What is the desired functionality?")
+	st.write("""
+	The main goal of calibration is to meld simulation and the real world together.
+	This can be done by focusing on a simple straight throttle command.  If a
+	straight command actually goes straight in real life, then our design
+	criteria is met.
+	""")
+
+	st.subheader("Describe the design you chose.")
+	st.write("""
+	The final chosen method of calibration is 100% visual.  By keeping track of
+	the middle pixel of the camera, assuming it is mounted straight, we can
+	track the “straightness” of our car path.
+	""")
+
+	st.subheader(
+		"What design choices did you make when you formulated your design?\
+		What trade-offs did you have to make?")
+	st.write("""
+	Our original method was to use wheel encoders to track the path of the car.
+	However, we realized that the deviation based on wheel slippage and motor
+	differences was negligible, and our error was largely based on steering error.
+	Thus, we switched to a visual method of calibration.
+	""")
+
+	st.subheader(
+		"How do these design choices impact how well the project meets design\
+		criteria that would be encountered in a real engineering application,\
+		such as robustness, durability, and efficiency?")
+	st.write("""
+	In a real engineering application, this visual method technically yields more
+	error, as it could propagate from an incorrect assumption that the camera is
+	mounted perfectly straight.  However, in our case, it was a very quick and
+	effective fix in scale with our project.
+	""")
+
+	st.header("Implementation Questions")
 	st.subheader("Describe any hardware you used or built. Illustrate with pictures and diagrams.")
 	st.write("""
 	The ROAR car itself and the wheel encoders installed were the full set of
@@ -84,23 +123,19 @@ def page():
 	camera for calibration.
 	""")
 
-	st.subheader("Describe any software you wrote in detail. Illustrate with diagrams, flow charts, and/or other appropriate visuals. This includes launch files, URDFs, etc.")
+	st.subheader(
+		"Describe any software you wrote in detail. Illustrate with diagrams,\
+		flow charts, and/or other appropriate visuals. This includes launch\
+		files, URDFs, etc.")
 	st.write("""
 	Not applicable.
 	""")
 
-	st.subheader("What design choices did you make when you formulated your design?")
-	st.write("""
-	Our original method was to use wheel encoders to track the path of the car.
-	However, we realized that the deviation based on wheel slippage and motor
-	differences was negligible, and our error was largely based on steering error.
-	Thus, we switched to a visual method of calibration.
-	""")
-
 	st.subheader("How does your complete system work? Describe each step.")
 	st.write("""
-	Using the aforementioned straightness calibration method, we are able to
-	find that the calibrated “1500” centered steering command, corresponding to
-	a steering range of 1000 to 2000, drifts left.  Our corrected steering
-	center becomes 1554, corresponding to a steering range of 1054 and 2054.
+	Using the aforementioned straightness calibration method (look above for details),
+	we are able to find that the calibrated “1500” centered steering command,
+	corresponding to a steering range of 1000 to 2000, drifts left.  Our
+	corrected steering center becomes 1554, corresponding to a steering range
+	of 1054 and 2054.
 	""")

@@ -7,3 +7,5 @@ def page():
 	### Real Life PID Controller
 	*By Marleah Puckett and Michael Wu*
 	""")
+
+	st.video("https://www.youtube.com/watch?v=hMaLXqPO5DM")

@@ -4,11 +4,8 @@ import pandas as pd
 
 from webpages.home_page import page as home
 from webpages.team_page import page as team
-from webpages.project_page import page as project
-
 from webpages.introduction_page import page as introduction
-from webpages.design_page import page as design
-from webpages.implementation_page import page as implementation
+from webpages.projects_page import page as projects
 from webpages.results_page import page as results
 from webpages.conclusion_page import page as conclusion
 from webpages.additionalmaterials_page import page as additionalmaterials
@@ -18,7 +15,7 @@ st.title('ROAR: A 106A Final Project')
 def sidebar():
 	st.sidebar.title("Where do you want to go?")
 	app_mode = st.sidebar.selectbox("",
-	    ["Home", "Introduction", "Design", "Implementation", "Results",
+	    ["Home", "Introduction", "Design and Implementation", "Results",
 		"Conclusion", "Team", "Additional Materials"])
 	return app_mode
 
@@ -26,14 +23,10 @@ def sidebar():
 def mainpage(page_mode):
 	if page_mode == 'Home':
 		home()
-	if page_mode == 'Project':
-		project()
 	if page_mode == 'Introduction':
 		introduction()
-	if page_mode == 'Design':
-		design()
-	if page_mode == 'Implementation':
-		implementation()
+	if page_mode == 'Design and Implementation':
+		projects()
 	if page_mode == 'Results':
 		results()
 	if page_mode == 'Conclusion':
