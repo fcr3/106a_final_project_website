@@ -10,7 +10,7 @@ from webpages.project_pages.calibration import page as calibration
 
 def page():
 	st.write("""
-	## Implementation Page
+	## Design and Implementation
 	""")
 
 	app_mode = st.sidebar.selectbox(

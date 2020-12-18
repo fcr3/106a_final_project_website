@@ -5,7 +5,7 @@ from PIL import Image
 
 def page():
 	st.header("Home")
-	st.subheader("Team: Jonathan Wong, Michael Wu, Marleah Puckett, Christian Reyes, James Cheney")
+	st.subheader("Team: Marleah Puckett, Michael Wu,  Jonathan Wong, Christian Reyes, James Cheney")
 	st.write("""
 	University of California, Berkeley
 	""")

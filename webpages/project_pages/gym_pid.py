@@ -11,7 +11,7 @@ def page():
 	### Gym-Tuned PID Controller
 	*By Michael Wu and Christian Reyes*
 	""")
-	st.video("https://www.youtube.com/watch?v=xJemmKPnML4")
+	st.video("https://www.youtube.com/watch?v=w2g0dKvVW-c")
 
 	st.write("""
 	We decided to use Gym and stable-baseline to facilitate reinforcement

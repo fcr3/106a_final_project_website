@@ -11,7 +11,7 @@ def page():
     *By James Cheney and Christian Reyes*
     """)
     st.video("https://www.youtube.com/watch?v=kTxV4qfiV6o")
-    
+
     st.write("""
     As the name may suggest, the roll controller uses roll instead of PID for
     controlling longitudinal movement, i.e. controlling the throttle. Latitudinal
@@ -177,6 +177,69 @@ def page():
     control.
     """)
 
+    st.header("Design Questions")
+    st.subheader(
+    	"What design criteria must your project meet? What is the desired functionality?")
+    st.write("""
+    The design criteria is to smoothly, reliably, and quickly be able to autonomously
+    maneuver a vehicle around a given road course. For now, we are concerned with
+	simulated racing environments, so our ultimate goal is to achieve the fastest lap
+    around the given Carla track while taking into account the previosly mentioned items.
+    To this end, it was desired to test a variety of controllers and see which one
+    performs best.
+    """)
+
+    st.subheader("Describe the design you chose.")
+    st.write("""
+    Unlike other controllers mentioned in this final project, the Roll controller
+    is not one that has been tried and tested. It was an innovation of our group
+    to use the roll control as a way to output the throttle. Intuitively, if our
+    car has nonzero roll, we would like to slow down to prevent sliding and
+    promote smooth motion, especially around curves.
+    """)
+
+    st.subheader(
+		"What design choices did you make when you formulated your design?\
+		What trade-offs did you have to make?")
+    st.write("""
+    This was discussed in the general description and implementation details
+    above. Notable design choices were (1) the edtiting of the ground plane detection
+    algorithm for calculating roll and (2) the throttle function for our controller.
+
+    In particular, we edited the ground plane detection algorithm by
+    (1) looking in a desired region, (2) sampling points from the region, and (3)
+    taking the mean of the normals similar to the seed point normal. This mean
+    gives us the road mean vector. In regard to our throttle function, it
+    behaves in a way that aligns with our intution, i.e. the output is in the interval
+    [0, 1] and throttle is penalized when roll is nonzero.
+
+    In terms of trade-offs, we had to sacrifice the generalizability of the
+    flood fill algorithm running at each time step for faster hacks. Technically,
+    our system is designed to perform on the track given in Carla, so we might
+    have to tune the hard-coded values if given another track.
+    """)
+
+    st.subheader(
+    	"How do these design choices impact how well the project meets design\
+    	criteria that would be encountered in a real engineering application,\
+    	such as robustness, durability, and efficiency?")
+    st.write("""
+    Since the Roll controller is not a tried and tested system, it may not be as
+    robust in real-world environments. However, skidding and sliding is a very
+    real thing that race cars must deal with, and although our Carla environment
+    does not simulate this behavior, we believe that this design choice will
+    serve our racing agent well in reliably navigating curves at high speeds due
+    to factoring in roll.
+
+    In terms of generalizability amongst racing tracks, our current system is not
+    robust, since we hard code timesteps for roll calculations and use KNN to
+    gather similar normals instead of using a more strict termination criteria
+    (the flood fill algorithm features this). However, we did not have the
+    opportunity to try out other tracks to test out our generalizability, so
+    we leave this as a future topic to explore.
+    """)
+
+    st.header("Implementation Questions")
     st.subheader("Describe any hardware you used or built. Illustrate with pictures and diagrams.")
     st.write("""
     Not applicable.
@@ -196,20 +259,6 @@ def page():
     were minor - such as copying an agent and modifying it to call the Roll
     Controller instead of the already existing PID controller, and changing the
     initiating file to call this agent instead of the original.
-    """)
-
-    st.subheader("What design choices did you make when you formulated your design?")
-    st.write("""
-    This was discussion in the general description and implementation details
-    above. Notable design choices were (1) the edtiting of the ground plane detection
-    algorithm for calculating roll and (2) the throttle function for our controller.
-
-    In particular, we edited the ground plane detection algorithm by
-    (1) looking in a desired region, (2) sampling points from the region, and (3)
-    taking the mean of the normals similar to the seed point normal. This mean
-    gives us the road mean vector. In regard to our throttle function, it
-    behaves in a way that aligns with our intution, i.e. the output is in the interval
-    [0, 1] and throttle is penalized when roll is nonzero.
     """)
 
     st.subheader("How does your complete system work? Describe each step.")
