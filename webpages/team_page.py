@@ -8,6 +8,7 @@ def page():
 	st.write("""
 	Answer
 	""")
+	
 	st.subheader("Describe the major contributions of each team member.")
 	st.write("""
 	Answer

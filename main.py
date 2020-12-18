@@ -13,15 +13,13 @@ from webpages.results_page import page as results
 from webpages.conclusion_page import page as conclusion
 from webpages.additionalmaterials_page import page as additionalmaterials
 
-from webpages.temp_page import page as temppage
-
 st.title('ROAR: A 106A Final Project')
 
 def sidebar():
 	st.sidebar.title("Where do you want to go?")
 	app_mode = st.sidebar.selectbox("",
 	    ["Home", "Introduction", "Design", "Implementation", "Results",
-		"Conclusion", "Team", "Additional Materials", "Project"])
+		"Conclusion", "Team", "Additional Materials"])
 	return app_mode
 
 
