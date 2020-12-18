@@ -20,7 +20,8 @@ st.title('ROAR: A 106A Final Project')
 def sidebar():
 	st.sidebar.title("Where do you want to go?")
 	app_mode = st.sidebar.selectbox("",
-	    ["Home", "Introduction", "Design", "Implementation", "Results", "Conclusion", "Team", "Additional Materials", "Project", "temp"])
+	    ["Home", "Introduction", "Design", "Implementation", "Results",
+		"Conclusion", "Team", "Additional Materials", "Project"])
 	return app_mode
 
 
@@ -33,7 +34,7 @@ def mainpage(page_mode):
 		introduction()
 	if page_mode == 'Design':
 		design()
-	if page_mode == 'implementation':
+	if page_mode == 'Implementation':
 		implementation()
 	if page_mode == 'Results':
 		results()
@@ -43,8 +44,6 @@ def mainpage(page_mode):
 		team()
 	if page_mode == 'Additional Materials':
 		additionalmaterials()
-	if page_mode == 'temp':
-		temppage()
 
 if __name__ == '__main__':
 	page_mode = sidebar()
