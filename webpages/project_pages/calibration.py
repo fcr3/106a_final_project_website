@@ -6,11 +6,13 @@ import base64
 import streamlit.components.v1 as st_comps
 
 def page():
-	st.header("Calibration")
 	st.write("""
+	### Calibration
 	*By Jonathan Wong and Michael Wu*
 	""")
 	assets_path = 'webpages/project_pages/calibration_assets'
+
+	st.video("https://www.youtube.com/watch?v=80_u7MuXQJk")
 
 	st.write("""
 	Calibration is the first step from taking the ROAR project from simulations

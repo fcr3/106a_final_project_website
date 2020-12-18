@@ -2,21 +2,29 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-from webpages.project_pages.calibration import page as calib_page
-from webpages.project_pages.gym_pid import page as gym_pid_page
-from webpages.project_pages.real_pid import page as real_pid_page
-from webpages.project_pages.stanley import page as stanley_page
+from webpages.project_pages.real_pid import page as real_pid
+from webpages.project_pages.gym_pid import page as gym_pid
+from webpages.project_pages.stanley import page as stanley
+from webpages.project_pages.gpd_and_rollctrl import page as gpd_rc
+from webpages.project_pages.calibration import page as calibration
 
 def page():
-	st.header("Implementation")
-	app_mode = st.sidebar.selectbox("Choose a subproject implementation:",
-	    ["PID", "RL PID", "Stanley", "Calibration"])
+	st.write("""
+	## Implementation Page
+	""")
 
-	if app_mode == "PID":
-		real_pid_page()
-	if app_mode == "RL PID":
-		gym_pid_page()
-	if app_mode == "Stanley":
-		stanley_page()
-	if app_mode == "Calibration":
-		calib_page()
+	app_mode = st.sidebar.selectbox(
+		"Which part of the project do you want to see?",
+	    ["Real Life PID Controller", "Gym Tuned PID Controller",
+	     "Stanley Controller", "GPD & Roll Controller", "Calibration"])
+
+	if app_mode == 'Real Life PID Controller':
+		real_pid()
+	if app_mode == 'Gym Tuned PID Controller':
+		gym_pid()
+	if app_mode == 'Stanley Controller':
+		stanley()
+	if app_mode == 'GPD & Roll Controller':
+		gpd_rc()
+	if app_mode == 'Calibration':
+		calibration()
