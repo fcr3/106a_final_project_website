@@ -33,6 +33,20 @@ def page():
 
 	st.write("""
 	### Gym-Tuned PID Controller
+	The video demonstrates an agent using the model trained using observation of
+	current steering, throttle, and speed.
+
+	It is worth noting that the trajectory of the vehicle is obviously not smooth,
+	however, it never collides. We think that it is due to the extremely high
+	penalty that we have imposed on collision and therefore the model has learnt
+	to not collide. We suspect that the shaking is due to the fact that the
+	waypoint being read in is not smooth, or in other words, the trajectory we
+	passed in is not exactly smooth.
+
+	It is also worth noting that the agent learnt to increase its speed on straight
+	lines and decrease speed at turns. That is a desired behavior because as humans,
+	we would also opt for such actions.
+
 	Here is a demo of our RL PID agent.
 	""")
 	st.video("https://www.youtube.com/watch?v=w2g0dKvVW-c")
