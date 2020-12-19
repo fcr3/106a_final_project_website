@@ -264,7 +264,17 @@ def page():
     were minor - such as copying an agent and modifying it to call the Roll
     Controller instead of the already existing PID controller, and changing the
     initiating file to call this agent instead of the original.
+
+    Below is a software flow chart, detailing the event loop for our controller
+    in the Carla/ROAR system. After the initialization steps, inputs come from
+    the system, except for the roll which comes from our depth sensor calculations.
+    Blocks are classes within the Carla/ROAR codebase, and class methods are
+    depicted as ovals. Outputs will be directed to the car motors, and the event 
+    loop starts over.
     """)
+    image = Image.open(f'{assets_path}/software_flow.png')
+    st.image(image, caption='Flow Chart of Controller Software Events',
+    		 use_column_width=True)
 
     st.subheader("How does your complete system work? Describe each step.")
     st.write("""

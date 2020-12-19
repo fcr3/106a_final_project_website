@@ -76,9 +76,12 @@ def page():
 	st.subheader("Describe any hardware you used or built. Illustrate with\
 	 			  pictures and diagrams.")
 	st.write("""
-	We set up and used a Vive Tracker for our localization service. A Vive
-	Tracker works by creating a wireless connection between the car and the
-	headset which allows for localization of the car. URL for VIVE Tracker
+	We set up and used a Vive Tracker for our localization service. A Vive Trackers
+	works by communicating with a central PC through radio wave, and then SteamVR
+	will pick up that signal, registering it as one of the Vive trackers. We used
+	a package called OpenVR to interact with SteamVR and then we wrote our own
+	server and client using Python Sockets to enable live data streaming from the
+	central PC the on vehicle Jetson Nano. URL for VIVE Tracker
 	photo is [here](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bhphotovideo.com%2Fc%2Fproduct%2F1413238-REG%2Fhtc_99hanl002_00_vive_tracker_2018_tracker_dongle_cradle_1m_usb_a_micro_b.html&psig=AOvVaw0NkfE-x1KJzxseFDtc9jsG&ust=1608440742615000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCMiZ5Oqi2e0CFQAAAAAdAAAAABAF).
 	""")
 	image = Image.open(f'{assets_path}/goggles.JPG')
@@ -101,9 +104,14 @@ def page():
 			 use_column_width=False)
 
 	st.write("""
-	We used the ROAR race car, lent to us by the ROAR research group. The ROAR
-	race car uses a Jetson Nano + RealSense for sensing, a waypoint parser and analyzer
-	for planning, and signals to the wheels and steering for actuation.
+	We used the ROAR race car, lent to us by the ROAR research group.
+	The ROAR race car uses Jetson Nano for data processing, Vive Tracker for
+	localization, and Intel realsense for sensing. Software wise, ROAR provides
+	out-of-box implementation for a mission waypoint planner parser and a local
+	waypoint parser. A mission waypoint planner reads in a waypoint file and
+	outputs a series of waypoints. A local waypoint parser will take the series
+	of waypoints, and implement a look ahead to select the optimal waypoint for
+	the current speed of the vehicle.
 	""")
 	image = Image.open(f'{assets_path}/homeimg.png')
 	st.image(image, caption= 'The Squadron of ROAR RC cars',
@@ -120,6 +128,14 @@ def page():
 		"Describe any software you wrote in detail. Illustrate with diagrams,\
 		flow charts, and/or other appropriate visuals. This includes launch\
 		files, URDFs, etc.")
+
+	st.write("""
+	We implemented a lateral and longitudinal classic PID controller according to
+	the below equation full code [here](https://github.com/wuxiaohua1011/ROAR/blob/main/ROAR/control_module/pid_controller.py?fbclid=IwAR2FvSHhgStReKUQU9mnrzmXtdz9N4yPmzxAe9JsKTrqmJkjsjODyrCQIK0):
+	""")
+	st.latex(r'''
+	K_p e + K_d \frac{de}{dt} + K_i \int^{t}_{0} e(t) dt
+	''')
 
 	st.write("""
 	Here is a code snippet of how we find our K values for our PID controller.
@@ -139,13 +155,13 @@ def page():
 
 	st.write("""
 	The PID controller is implemented in the pid_controller.py file that uses
-	the find_k_values function to look up k values hard-coded into the
-	pid_config.json file. The k values hard-coded into the pid_config.json file
+	the `find_k_values` function to look up k values hard-coded into the
+	`pid_config.json` file. The k values hard-coded into the `pid_config.json` file
 	are the k values found through testing different k values and picking the
 	best ones (least amount of oscillation and deviation from the desired waypoints).
 	At first, different PID k values were tested at different vehicle speeds,
-	however after testing it was found that the PID k values were not affected
-	significantly by vehicle speed so PID k values were set to be constant,
+	however after testing it was found that the PID K values were not affected
+	significantly by vehicle speed so PID K values were set to be constant,
 	despite vehicle speed for both the lateral and longitudinal controllers.
 	""")
 	image = Image.open(f'{assets_path}/pid_figure.png')
@@ -153,7 +169,7 @@ def page():
 			 use_column_width=True)
 
 	st.write("""
-	The simple_waypoint_following_local_planner.py file is used to feed recorded
+	The `simple_waypoint_following_local_planner.py` file is used to feed recorded
 	waypoints into the PID controller. It works by setting the correct lookahead
 	for the current vehicle speed, then getting the correct waypoint, and feeding
 	that waypoint into the controller. You can find the .py file [here](https://github.com/wuxiaohua1011/ROAR/blob/main/ROAR/planning_module/local_planner/simple_waypoint_following_local_planner.py?fbclid=IwAR3fjAyI3_m7ys2mOfearqVZmxBopHhsyiGxOwgwfGfQim1CXe2ftyhca1I).
