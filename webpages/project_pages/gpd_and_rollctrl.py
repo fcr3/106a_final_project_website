@@ -9,8 +9,13 @@ def page():
     st.write("""
     ### Ground Plane Detection and the Roll Controller
     *By James Cheney and Christian Reyes*
+
+    Below is (1) a demo run of the controller and (2) an in-depth explanation
+    of the Roll controller. Feel free to watch the video or read the content,
+    as they pretty much go over the same thing.
     """)
     st.video("https://www.youtube.com/watch?v=kTxV4qfiV6o")
+    st.video("https://www.youtube.com/watch?v=SvllzcfLZ7g")
 
     st.write("""
     As the name may suggest, the roll controller uses roll instead of PID for
