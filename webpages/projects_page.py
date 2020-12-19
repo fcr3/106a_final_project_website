@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+from webpages.project_pages.general import page as general
 from webpages.project_pages.real_pid import page as real_pid
 from webpages.project_pages.gym_pid import page as gym_pid
 from webpages.project_pages.stanley import page as stanley
@@ -15,9 +16,11 @@ def page():
 
 	app_mode = st.sidebar.selectbox(
 		"Which part of the project do you want to see?",
-	    ["Real Life PID Controller", "Gym Tuned PID Controller",
+	    ["General Info", "Real Life PID Controller", "Gym Tuned PID Controller",
 	     "Stanley Controller", "GPD & Roll Controller", "Calibration"])
 
+	if app_mode == 'General Info':
+		general()
 	if app_mode == 'Real Life PID Controller':
 		real_pid()
 	if app_mode == 'Gym Tuned PID Controller':
