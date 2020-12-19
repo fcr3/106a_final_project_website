@@ -15,6 +15,8 @@ def page():
 			 caption= '"Float like a Cadillac, sting like a Beemer." - Lightning McQueen',
 			 use_column_width=True)
 
+	st.video("https://www.youtube.com/watch?v=JUTDc0dXWjA")
+
 	st.write("""
 	Hello and welcome to our 106a final project website. In this website, you
 	will find a detailed report about our project. The menu on the side will
