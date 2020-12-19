@@ -71,17 +71,6 @@ def page():
 	st.subheader(
 		"What design criteria must your project meet? What is the desired functionality?")
 	st.write("""
-	Our project builds upon the existing ROAR platform, and it is designed to
-	work in both simulation and in real vehicle, with a couple hyper parameter
-	changes.
-
-	Our project is divided into 5 distinct areas:
-	 - Real life PID controller
-	 - Reinforcement Learning based PID Controller
-	 - Ground Plane Detection + Roll Controller
-	 - Stanley Controller
-	 - Wheel Encoder Calibration and Tuning
-
 	Specifically for the ROAR Gym project, we decided to utilize the sensing
 	data of GPS, vehicle throttle, steering, and put it into our simple waypoint
 	following planning module, and into a PID controller.
@@ -89,21 +78,6 @@ def page():
 
 	st.subheader("Describe the design you chose.")
 	st.write("""
-	We did not choose to use ROS because currently the ROAR platform is not
-	integrated with ROS yet. However, it still exposes a set of clear API for
-	all the raw data that we need and a clear way of interacting with the
-	hardware.
-
-	Instead of the publisher subscriber model that ROS uses, ROAR implements
-	threading natively. This way, different modules can be customized easily
-	and pieced together with ease without experiencing network error.
-
-	In order to work with both hardware and simulation, we use Git submodule to
-	keep the parts separate. And ROAR splits into three major components:
-	 - The hardware -- ROAR Jetson
-	 - The Simulation -- ROAR Sim
-	 - The Autonomous Driving Code -- ROAR
-
 	Specifically for the ROAR Gym project, we decided to go with the gym
 	environment because it is open source, easy to start with, and have a variety
 	of supported examples, and future adaptations. And we chose to use a stable
