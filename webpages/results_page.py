@@ -37,12 +37,17 @@ def page():
 
 	st.write("""
 	### Stanley
-	While the Stanley controller works most of the time, it does not work very
-	well, in that it has uncovered a situation where the next waypoint provided
-	by the system does not always update. We plan to alleviate this problem by
-	modifying the code to cycle through the way point queue to the next available
-	whenever it is calculated the waypoint is behind the vehicle. The controller
-	seems to work fine other than this glitch.
+	While the Stanley controller works most of the time, it does not work reliably,
+	in that it has uncovered a situation where the next waypoint provided by the
+	system does not always update. Because the Stanley controller uses both heading
+	and crosstrack error as inputs to the steering command, the misinformation
+	provided by the expired waypoint sometimes causes the heading error to cancel
+	the crosstrack error, resulting in a near zero steering command in a turn.
+	This causes the vehicle to proceed straight to the outside edge of the curve.
+	We plan to alleviate this problem by modifying the code to cycle through the
+	way point queue to the next available whenever it is calculated the waypoint
+	is behind the vehicle.  The controller seems to work fine other than this
+	glitch.
 	""")
 	st.write("""
 	Here is a demo of Stanley controller agent.
