@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from PIL import Image
+import base64
 
 def page():
 	st.write("""
@@ -8,6 +10,7 @@ def page():
 	*By James Cheney and Michael Wu*
 	""")
 	st.video("https://www.youtube.com/watch?v=Tj12WJK7HaE")
+	assets_path = 'webpages/project_pages/stanley_assets'
 
 	st.header("Design Questions")
 	st.subheader(
@@ -67,6 +70,9 @@ def page():
 	to call the Stanley Controller instead of the already existing PID controller,
 	and changing the initiating file to call this agent instead of the original.
 	""")
+	image = Image.open(f'{assets_path}/software_flow.png')
+	st.image(image, caption='Flow Char of Controller Software Events',
+			 use_column_width=True)
 
 	st.subheader("How does your complete system work? Describe each step.")
 	st.write("""
@@ -92,12 +98,17 @@ def page():
 	st.write("""
 	From our observations, $k=1.8$ worked the best.
 
-	While the Stanley controller works most of the time, it does not work very
-	well, in that it has uncovered a situation where the next waypoint provided
-	by the system does not always update.  We plan to alleviate this problem by
-	modifying the code to cycle through the way point queue to the next available
-	whenever it is calculated the waypoint is behind the vehicle.  The controller
-	seems to work fine other than this glitch.
+	While the Stanley controller works most of the time, it does not work reliably,
+	in that it has uncovered a situation where the next waypoint provided by the
+	system does not always update. Because the Stanley controller uses both heading
+	and crosstrack error as inputs to the steering command, the misinformation
+	provided by the expired waypoint sometimes causes the heading error to cancel
+	the crosstrack error, resulting in a near zero steering command in a turn.
+	This causes the vehicle to proceed straight to the outside edge of the curve.
+	We plan to alleviate this problem by modifying the code to cycle through the
+	way point queue to the next available whenever it is calculated the waypoint
+	is behind the vehicle.  The controller seems to work fine other than this
+	glitch.
 	""")
 
 	st.subheader("References")

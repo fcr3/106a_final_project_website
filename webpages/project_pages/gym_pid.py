@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 import base64
+import streamlit.components.v1 as st_comps
 
 def page():
 	assets_path = 'webpages/project_pages/gym_pid_assets'
@@ -74,7 +75,7 @@ def page():
 	work in both simulation and in real vehicle, with a couple hyper parameter
 	changes.
 
-	Our project is divided into 4 distinct areas:
+	Our project is divided into 5 distinct areas:
 	 - Real life PID controller
 	 - Reinforcement Learning based PID Controller
 	 - Ground Plane Detection + Roll Controller
@@ -139,18 +140,18 @@ def page():
 	competition. In terms of efficiency, it is able to run at about 50 FPS.
 	Putting this data in comparison with a traditional PID controller -- which
 	is also about 55 FPS, i think that this simple neural net is performing
-	really well. 
+	really well.
 	""")
 
 	st.header("Implementation Questions")
 	st.subheader("Describe any hardware you used or built. Illustrate with pictures and diagrams.")
 	st.write("""
-
+	Not applicable.
 	""")
 
 	st.subheader("What parts did you use to build your solution?")
 	st.write("""
-
+	Not applicable.
 	""")
 
 	st.subheader(
@@ -158,10 +159,21 @@ def page():
 		flow charts, and/or other appropriate visuals. This includes launch\
 		files, URDFs, etc.")
 	st.write("""
-	Not applicable.
+	See our description above for the implementation details and associated figures.
 	""")
 
 	st.subheader("How does your complete system work? Describe each step.")
 	st.write("""
-
+	Specifically for RL based PID controller, it is a infinite while loop with
+	each loop doing...
+	""")
+	st_comps.html("""
+	In Loop:
+	<ol>
+		<li>Get the vehicle state (Current transform, camera data)</li>
+		<li>Planning module produces the next waypoint</li>
+		<li>Feed the next waypoint and vehicle state into the RL based PID Controller</li>
+		<li>RL based PID Controller will output the next throttle and steering</li>
+		<li>Stream the throttle and steering into the environment that we are attached to currently (either simulation or real hardware)</li>
+	</ol>
 	""")
