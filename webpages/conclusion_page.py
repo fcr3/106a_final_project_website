@@ -66,7 +66,10 @@ def page():
 	Roll controller is not a tried and tested system. It was an innovation of
 	our group to use the roll control as a way to output the throttle. This means
 	that, on a real track, with sliding and disturbances, the Roll controller could
-	not perform as well as our simulation suggests.
+	not perform as well as our simulation suggests. Additionally, there are some
+	hacks for speeding up the roll calculation such as using the horizon,
+	sparse sampling, KNN, and execution of calculation at certain time steps. We
+	need a more robust algorithm to speed up the calcultions. 
 	""")
 
 	st.subheader("What improvements would you make if you had additional time?")
@@ -90,4 +93,22 @@ def page():
 	unnecessary calculations when, for example driving fast on a straight path. So
 	another improvement we could make to reduce lap time is to smartly adjust the
 	lookahead based on different track scenarios and velocities.
+
+	Next steps for the Stanley Controller are to implement the proposed solution
+	and see if it fixes the problem with the waypoint not updating and causing
+	the controller to “stall out”.  The proposed fix is to skip any waypoint that
+	has “expired” - eg is behind the vehicle.  The next waypoint in the queue will
+	be accessed and this cycle will continuously repeat until a waypoint in front
+	of the vehicle is found.
+
+	The RollControll has room for improvement.  A look ahead can be added to
+	detect when a turn is coming.  This could be done by taking the rate of
+	change of the heading error, and when it is increasing and greater than a
+	given rate, the throttle will be lowered proportionally.  When the look-ahead
+	heading error is zero or decreasing, acceleration can be resumed according to
+	the RollControll algorithm.
+
+	Finally, the various controllers can all be tuned in the gym to maximize
+	performance.  They can also be tested in the physical car, to test cross
+	platform viability.
 	""")

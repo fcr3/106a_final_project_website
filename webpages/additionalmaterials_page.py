@@ -4,23 +4,16 @@ import pandas as pd
 
 def page():
 	st.header("Additional Materials")
-	st.subheader("Code, URDFs, and launch files you wrote:")
+	st.subheader("Github Code:")
 	st.write("""
-	Answer
-	""")
-	st.subheader("CAD models for any hardware you designed:")
-	st.write("""
-	Answer
-	""")
-	st.subheader("Data sheets for components used in your system:")
-	st.write("""
-	Answer
-	""")
-	st.subheader("Any additional videos, images, or data from your finished solution:")
-	st.write("""
-	Answer
-	""")
-	st.subheader("Links to other public sites (e.g., GitHub), if that is where your files are stored:")
-	st.write("""
-	Answer
+	### [Traditional PID and RL PID Code in Michael's ROAR Branch](https://github.com/wuxiaohua1011/ROAR/tree/roll_additions)
+	 - [Traditional PID Agent](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/agent_module/pid_agent.py)
+	 - [RL PID Agent](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/agent_module/rl_testing_pid_agent.py)
+
+	### [Stanley and Roll Code in Michael's ROAR Branch](https://github.com/wuxiaohua1011/ROAR/tree/roll_additions)
+	 - [Roll Agent](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/agent_module/jAM1Agent.py)
+	 - [Roll Calculation Script](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/perception_module/ground_plane_detector.py)
+	 - [Roll Controller](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/control_module/pid_roll_controller.py)
+	 - [Stanley Agent](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/agent_module/jAM3Agent.py)
+	 - [Stanley Controller](https://github.com/wuxiaohua1011/ROAR/blob/roll_additions/ROAR/control_module/bstanley_controller.py)
 	""")
