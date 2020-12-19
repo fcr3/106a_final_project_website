@@ -77,14 +77,18 @@ def page():
 	st.subheader("How does your complete system work? Describe each step.")
 	st.write("""
 	The Stanley lateral controller takes as inputs the position and pose of the
-	vehicle and waypoints in the simulated world. This data is converted in a
-	function into the vehicle reference frame, which is used to further process
-	the data. The data is processed to determine the distance the vehicle is
-	away from the desired path as well as the difference in heading of the
-	desired path trajectory and the vehicle. This information is returned to
-	where controller parent as cross track error and heading error, where it is
-	fed into the following formula to determine the steering information sent to
-	the vehicle actuator:
+	vehicle and waypoints in the simulated world.  This data is converted in a
+	function into the vehicle reference frame.  The data is further processed
+	to determine the distance the vehicle is away from the desired path (cross
+	track error) as well as the difference in heading of the desired path
+	trajectory and the vehicle (heading error). See the diagram above for
+	visual work flow of event loop.
+	""")
+
+	st.write("""
+	This information is returned to the controller parent as cross track error
+	and heading error, where it is fed into the following formula to determine
+	the steering information sent to the vehicle actuator.
 	""")
 
 	st.latex(r'''
