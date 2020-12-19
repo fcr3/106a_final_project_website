@@ -48,6 +48,9 @@ def page():
 	vehicles finished the off road course in the first year). It has been adapted
 	and tested in other situations and is a well known alternative to controllers
 	such as standard PID and Pure Pursuit controllers.
+
+	In other words, like the traditional PID controller, this controller has
+	been tested by others and has built-in robustness.
 	""")
 
 	st.header("Implementation Questions")
