@@ -7,6 +7,25 @@ def page():
 	st.header("Results")
 	st.write("""
 	### Real Life PID Controller
+	The Real PID controller was difficult to implement, but works very well.
+	Through testing, laptime was drastically decreased and the car didn’t run
+	into any barriers (although there was one close call). Given the challenges
+	we faced dealing with the physical car, we are very pleased with the output
+	of the Real PID.
+
+	One interesting observation is that the car was found to speed up at the
+	start of its lookahead length and then slow down until the end of its
+	lookahead length. We implemented a short lookahead since it was beneficial
+	around corners, reducing crashes and creating smoother movement. However,
+	this behavior, combined with a short lookahead length made the car perform
+	poorly on straight runs that can handle faster speeds. To improve the Real
+	PID controller in the future, the lookahead could be improved so that there
+	is a longer lookahead on straight paths that can handle increased speeds.
+	Likewise, as a driver it is known that it is desirable to enter a curve
+	slowly and then speed up while exiting the curve and, when done in reverse,
+	this could be detrimental. Improving the system so that the car never enters
+	a curve at its fastest speed would also be beneficial.
+
 	Results shown below. Here is a demo of our PID controller at
 	Richmond Field Station.
 	""")
