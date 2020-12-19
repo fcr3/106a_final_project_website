@@ -71,7 +71,7 @@ def page():
 	and changing the initiating file to call this agent instead of the original.
 	""")
 	image = Image.open(f'{assets_path}/software_flow.png')
-	st.image(image, caption='Flow Char of Controller Software Events',
+	st.image(image, caption='Flow Chart of Controller Software Events',
 			 use_column_width=True)
 
 	st.subheader("How does your complete system work? Describe each step.")
